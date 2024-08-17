@@ -1,0 +1,368 @@
+/* variables */
+:root{
+    --fuente-texto-tamaño:1.29rem;
+    --color-enfasis1:rgba(176, 176, 176, 0.687);
+    --fuente1:'Poppins', sans-serif;
+}
+
+body{ 
+    background-color: -webkit-linear-gradient(90deg, #1e290d,hsl(157, 100%, 8%),#00232f,#001a41,#08013a);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #1e290d,#002718,#00232f,#001a41,#08013a);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                                                                          
+    height: 90vh;   
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0%;
+    height: 10%;
+    margin-top: 1%;
+    gap: 15%;   
+}
+
+.titulo{
+    font-size: 1.99rem;
+    color: white;
+    font-family: var(--fuente1);
+    font-weight: 600;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    gap:0.25%;
+    box-sizing: border-box;   
+    
+}
+/*aqui va la respuesta del usuario toda vez que interactue e ingrese un texto mediante el boton encriptar o desencriptar*/
+.contenedor-respuesta{
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(176, 176, 176, 0.687);
+    gap:5%;
+    text-align: center;
+    width: 40%;
+    height:95%;
+    border-radius: 20px;
+    overflow: auto;
+    align-items: center;
+    margin: 1% 0% 0% 0%;
+    overflow: auto;
+    box-sizing: border-box;
+}
+.muneco{
+    width: 70%;
+    height: auto;
+    box-sizing: border-box;
+    margin-top:5%;
+}
+.respuesta{
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+    text-align:left;
+    font-family: var(--fuente1);
+    font-size: 1.15rem;  
+}
+/*Un contenedor que divide la pagina en dos partes junto con el contenedor anterior tambien contiene toda la parte editable e interactuable para el usuario final*/    
+
+.contenedor-cambio{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    width: 5%;
+    height: 67%;
+    gap:60%;
+    order:2;
+    align-items: center;
+    justify-content: center;
+}
+.copy{
+    width: 100%;
+    height: auto;
+    transition:transform 0.5s ease;
+    margin-top: 0%;
+
+}
+.copy:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.cambio{
+    width: 100%;
+    height: auto;   
+    transition: transform 0.5s ease;
+}
+.cambio:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#limpiarTexto{
+    transition: transform 0.5s ease;
+}
+#limpiarTexto:hover{
+    transform:scale(1.1);
+    cursor: pointer;
+}
+
+.user{ 
+    order: 1;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0% 0% 0% 1%;
+    padding: 0% 0% 0% 2%;
+    height: 98%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 53%;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.texto-usuario{
+    padding: 10px;
+    overflow: auto;
+    margin-top: 2%;
+    font-family: var(--fuente1);
+    font-size: var(--fuente-texto-tamaño);
+    max-height: 67%;
+    width: 100%;
+    max-width: 100%;
+    color: aliceblue;
+    border-radius: 20px;
+    background-color: rgba(176, 176, 176, 0.687);
+}
+.texto-usuario::-webkit-scrollbar {
+    width: 10px;
+    padding: 2%;               
+  } 
+.texto-usuario::-webkit-scrollbar-track {
+    background: transparent;        
+    border-radius: 20px;
+}
+.texto-usuario::-webkit-scrollbar-thumb {
+    background-color: #666666;    
+    border-radius: 50px;       
+    border: 3px solid black;    
+  }
+
+
+/*Estas son las propiedades css de la imagen llamada muñeco*/
+/*contenedores que contienen la advertencia del usuario*/
+.advertencia-contenedor-1{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0%;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 2%;
+}
+.advertencia-contenedor-2{
+    width: 100%;
+    display: flex;
+    margin-bottom: 2%;
+    margin-top: 2%;             /* usar dos contenedores
+    uno para que obtuviera el flex del padre, y otro para utilizar un nuevo flex dentro*/
+    margin-left: 0%;
+    font-size: var(--fuente-texto-tamaño);
+    text-align: center;
+    color: aliceblue;
+    gap: 1%;
+    align-items: center;
+}
+/*Aqui va el texto del usuario*/
+  /*los textos que estan debajo del muñeco*/
+.m1{
+    width: 70%;
+    height: auto;
+    font-family:var(--fuente1); 
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    text-align: center;
+}
+.m2{
+    width: 70%;
+    height: auto;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family:var(--fuente1);
+    letter-spacing: 0.04rem;
+}
+
+
+
+
+@media (max-width: 956px) {
+    body{ 
+        background: -webkit-linear-gradient(90deg, #1e290d,hsl(157, 100%, 8%),#00232f,#001a41,#08013a);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #1e290d,#002718,#00232f,#001a41,#08013a);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                                                                          
+        height: 120vh;   
+    }
+    header{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 0%;
+        height: 5%;
+        max-height: 5%;
+        width: 100%;
+        margin-top: 1%;
+        gap: 5%;
+
+    }
+    
+    .titulo{
+        font-size: 1rem;
+        color: white;
+        font-family: var(--fuente1);
+        font-weight: 600;
+        
+    }
+    .logo{
+    
+        height: 60%;
+        width: auto;
+    }
+    footer{
+        height: 0%;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        
+        
+    }
+    /*aqui va la respuesta del usuario toda vez que interactue e ingrese un texto mediante el boton encriptar o desencriptar*/
+    .contenedor-respuesta{
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(176, 176, 176, 0.687);
+        gap:2%;
+        width: 98%;
+        height:30%;
+        border-radius: 20px;
+        overflow: auto;
+        align-items: center;
+        justify-content: center;
+        margin: 1% 1% 0% 1%;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+    .muneco{
+        width: auto;
+        height: 50%;
+        box-sizing: border-box;
+        margin-top:5%;
+    }
+    .respuesta{
+        width: 90%;
+        height: 90%;
+        padding: 5%;
+        text-align:left;
+        font-family: var(--fuente1);
+        font-size: 1.1rem;  
+    }
+    /*Un contenedor que divide la pagina en dos partes junto con el contenedor anterior tambien contiene toda la parte editable e interactuable para el usuario final*/    
+    
+    .contenedor-cambio{
+        order:3;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 5%;
+        gap:50%;
+        order:2;
+        align-items: center;
+        justify-content: center;
+    }
+    .copy{
+        width: auto;
+        height: 100%;
+        transition:transform 0.5s ease;
+        margin-top: 0%;
+    
+    }
+    .copy:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    .cambio{
+        width: auto;
+        height: 100%;   
+        transition: transform 0.5s ease;
+        transform: rotate(90deg);
+        
+    }
+    .cambio:hover {
+        transform: scale(1.2);
+        
+        cursor: pointer;
+    }
+    
+    #limpiarTexto{
+        transition: transform 0.5s ease;
+    }
+    #limpiarTexto:hover{
+        transform:scale(1.1);
+        cursor: pointer;
+    }
+    
+    .user{ 
+        order: 3;
+        display: flex;
+        box-sizing: border-box;
+        margin: 0% 1% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        height: 40%;
+        overflow: auto;
+        width: 98%;
+        background-color: rgba(255, 255, 255, 0);
+        
+    }
+    .texto-usuario{
+        width: 100%;
+        padding-bottom: 1%;
+    }
+    
+    
+    /*Estas son las propiedades css de la imagen llamada muñeco*/
+    /*contenedores que contienen la advertencia del usuario*/
+    
+    .advertencia-contenedor-2{
+        display: flex;
+        font-size: 1rem;
+    }
+
+    
+    /*Aqui va el texto del usuario*/
+      /*los textos que estan debajo del muñeco*/
+    .m1{
+        width: 100%;
+        height: auto;
+        font-family:var(--fuente1); 
+        font-size: 1.35rem;
+        font-weight: 600;
+        letter-spacing: 0.04rem;
+        text-align: center;
+    }
+    .m2{
+        width: 70%;
+        height: auto;
+        text-align: center;
+        font-size: 1.1rem;
+        font-family:var(--fuente1);
+        letter-spacing: 0.04rem;
+    }   
+    .contenedor-papelera{
+    
+        height: 20%;
+    }
+}

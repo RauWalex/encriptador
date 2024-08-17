@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" user-autoscalable="no" content="width=device-width, initial-scale=1.0">
+    <title>Encritador de texto</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="botones.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/logoalura.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <img src="img/Logo.png" alt="logo de alura latam" class="logo">
+        <h1 class="titulo">DESAFIO ALURA</h1>
+    </header>
+    <main>
+        <section class="contenedor-respuesta">  
+            <img src="img/Muneco.png" alt="Un muñeco con una lupa" class="muneco" id="muneco">
+            <p  id="m1" class="m1">Ningún mensaje fue encontrado</p>
+            <p id="m2" class="m2">Ingresa el texto que desees encriptar o desencriptar. </p>
+            <div class="respuesta" id="respuesta" hidden></div>     
+        </section>
+        <section class="contenedor-cambio">
+            <img src="img/copy.png" alt="" id="copy" class="copy" onclick="copiarRespuesta()">
+            <img src="img/cambio.png" alt="" class="cambio" id="cambio" onclick="cambiarTexto()">
+        </section>
+        <section class="user">
+            <p class="texto-usuario" id="textoUsuario" contenteditable="true"  onfocus="eliminarTexto();" onblur="regresarTexto();">Ingresa el texto aqui</p>
+            <div class="advertencia-contenedor-1">
+                <div class="advertencia-contenedor-2">
+                    <i id="advertencia-img" class="ri-information-line" style="font-size: 2rem;transition: transform 0.3s ease;"></i>
+                    <p class="advertencia-parrafo"> Solo letras minusculas y sin acento </p> 
+                </div>                
+                <div class="contenedor_botones">
+                    <button id="encriptar" class="encriptar" onclick="encriptarTexto()"> ENCRIPTAR </button>
+                    <div class="contenedor-papelera"> <img id="limpiarTexto" src="img/delete-bin-line.png" onclick="restaurar()"     class="papelera-img"></div>
+                    <button id="desencriptar" class="desencriptar" onclick="desencriptarTexto()"> DESENCRIPTAR </button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="app.js"></script>
+<script src="encriptador.js"></script>
+<script src="desencriptador.js"></script>
+</html>
